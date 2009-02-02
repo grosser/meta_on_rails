@@ -12,7 +12,10 @@ module MetaOnRails
   
   private
 
+  # strip tags
+  # remove unecessary whitespace
+  # squeeze duplicate whitespace
   def normalize(s)
-    s.gsub(/<\/?[^>]*>/, '').gsub('"',"'")
+    s.gsub(/<\/?[^>]*>/, '').gsub('"',"'").gsub(/\s/,' ').squeeze(' ')
   end
 end

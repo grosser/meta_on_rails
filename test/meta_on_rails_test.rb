@@ -18,6 +18,11 @@ class MetaOnRailsTest < Test::Unit::TestCase
     assert output.include?("aword")
   end
   
+  def test_should_remove_unncessary_whitespace
+    set_meta(:keywords => "\n \ta \r b     c")
+    assert display_meta =~ /" a b c"/
+  end
+
   def test_should_override_default_values
     set_meta(:keywords => 'override')
     output = display_meta(:keywords => 'default')

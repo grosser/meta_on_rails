@@ -22,11 +22,11 @@ Default meta values can be set. In the above example, these two meta tags will b
 
 Then add this code to the view to set meta tags on that page:
 
-    <% set_meta(:keywords => 'my,keyword', :generator => 'a bad <script /> generator') %>
+    <% set_meta(:keywords => 'my,keyword', :generator => 'a bad <script />   \t \n generator') %>
 
 The output html will be like this:
 
-    <meta name="generator" content="a bad  generator" />
+    <meta name="generator" content="a bad generator" />
     <meta name="description" content="default description" />
     <meta name="keywords" content="my,keyword" />
 
